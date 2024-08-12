@@ -13,3 +13,17 @@ table {
     border-radius: 1rem ; /* Ajuste o valor conforme necessário */
     overflow: hidden; /* Para garantir que as bordas arredondadas funcionem corretamente */
   }
+
+  mat-form-field{
+    width: 100%;
+  }
+
+  button{
+    width: 100%;
+  }
+
+  h1{
+    width: 100%;
+    text-align: center;
+    margin-bottom: 2rem;
+  }
