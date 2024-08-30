@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormControl, Validators } from '@angular/forms';
-import { Router } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 import { ToastrService } from 'ngx-toastr';
 import { Technician } from 'src/app/models/technician';
 import { TechnicianService } from 'src/app/services/technician.service';
@@ -32,14 +32,25 @@ export class TechnicianUpdateComponent implements OnInit {
     private service: TechnicianService,
     private toast: ToastrService,
     private router: Router,
+    private route: ActivatedRoute,
   ) { }
 
   ngOnInit(): void {
+    this.technician.id = this.route.snapshot.paramMap.get('id')
+    this.findById();
   }
 
+  findById(): void {
+    this.service.findById(this.technician.id).subscribe(response => {
+      response.profile = []
+      this.technician = response;
+    })
+  }
+
+
   update(): void{
-    this.service.create(this.technician).subscribe(() => {
-      this.toast.success('Técnico cadastrado com sucesso', 'Cadastro');
+    this.service.update(this.technician).subscribe(() => {
+      this.toast.success('Usuário Atualizado com sucesso', 'Update');
       this.router.navigate(['technicians'])
     }, ex => {
       if(ex.error.errors){

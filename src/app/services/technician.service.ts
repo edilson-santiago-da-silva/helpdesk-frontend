@@ -9,15 +9,22 @@ import { API_CONFIG } from '../config/api.config';
 })
 export class TechnicianService {
 
-  constructor(private hhtp: HttpClient) { }
+  constructor(private http: HttpClient) { }
+
+  findById(id: any): Observable<Technician> {
+    return this.http.get<Technician>(`${API_CONFIG.baseUrl}/technicians/${id}`);
+  }
 
   findAll(): Observable<Technician[]> {
-    return this.hhtp.get<Technician[]>(`${API_CONFIG.baseUrl}/technicians`);
+    return this.http.get<Technician[]>(`${API_CONFIG.baseUrl}/technicians`);
   }
 
   create(technician: Technician): Observable<Technician> {
-    return this.hhtp.post<Technician>(`${API_CONFIG.baseUrl}/technicians`, technician);
+    return this.http.post<Technician>(`${API_CONFIG.baseUrl}/technicians`, technician);
   }
+
+  update(technician: Technician): Observable<Technician> {
+    return this.http.put<Technician>(`${API_CONFIG.baseUrl}/technicians/${technician.id}`, technician);
 }
 
-
+}
