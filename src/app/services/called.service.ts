@@ -14,4 +14,8 @@ export class CalledService {
   findAll(): Observable<Called[]> {
     return this.http.get<Called[]>(`${API_CONFIG.baseUrl}/calleds`);
   }
+
+  create(called: Called): Observable<Called> {
+    return this.http.post<Called>(`${API_CONFIG.baseUrl}/calleds`, called);
+  }
 }

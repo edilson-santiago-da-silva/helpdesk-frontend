@@ -5,7 +5,7 @@ export interface Called {
 	priority:	        string;
 	status:		        string;
 	title:		        string;	
-	description:	    string;
+	comments:	    string;
 	technician: 	    any;
 	client:		        any;
 	clientName:	        string;
