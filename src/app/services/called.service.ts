@@ -11,11 +11,20 @@ export class CalledService {
 
   constructor(private http: HttpClient) { }
 
+  
+  findById(id: any): Observable<Called> {
+    return this.http.get<Called>(`${API_CONFIG.baseUrl}/calleds/${id}`);
+  }
+
   findAll(): Observable<Called[]> {
     return this.http.get<Called[]>(`${API_CONFIG.baseUrl}/calleds`);
   }
 
   create(called: Called): Observable<Called> {
     return this.http.post<Called>(`${API_CONFIG.baseUrl}/calleds`, called);
+  }
+
+  update(chamado: Called): Observable<Called> {
+    return this.http.put<Called>(`${API_CONFIG.baseUrl}/calleds/${chamado.id}`, chamado);
   }
 }
