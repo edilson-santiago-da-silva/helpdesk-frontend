@@ -88,4 +88,25 @@ export class CalledUpdateComponent implements OnInit {
       this.technician.valid && this.client.valid 
   }
 
+  returnStatus(status: any): string {
+    if(status == '0') {
+      return 'ABERTO'
+    } else if(status == '1') {
+      return 'EM ANDAMENTO'
+    } else {
+      return 'ENCERRADO'
+    }
+  }
+
+  returnPriority(priority: any): string {
+    if(priority == '0') {
+      return 'BAIXA'
+    } else if(priority == '1') {
+      return 'MÉDIA'
+    } else {
+      return 'ALTA'
+    }
+  }
+
+
 }
