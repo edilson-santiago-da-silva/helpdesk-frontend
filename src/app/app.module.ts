@@ -46,6 +46,7 @@ import { ClientListComponent } from './components/client/client-list/client-list
 import { CalledListComponent } from './components/called/called-list/called-list.component';
 import { CalledCreateComponent } from './components/called/called-create/called-create.component';
 import { CalledUpdateComponent } from './components/called/called-update/called-update.component';
+import { CalledReadComponent } from './components/called/called-read/called-read.component';
 
 @NgModule({
   declarations: [
@@ -65,6 +66,7 @@ import { CalledUpdateComponent } from './components/called/called-update/called-
     CalledListComponent,
     CalledCreateComponent,
     CalledUpdateComponent,
+    CalledReadComponent,
     
   ],
   imports: [
