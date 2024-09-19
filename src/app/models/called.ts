@@ -8,6 +8,6 @@ export interface Called {
 	comments:	    string;
 	technician: 	    any;
 	client:		        any;
-	clientName:	        string;
-	clientTechnician:   string;	
+	nameClient:	        string;
+	nameTechnician:   string;	
 }

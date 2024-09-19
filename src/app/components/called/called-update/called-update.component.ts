@@ -22,8 +22,8 @@ export class CalledUpdateComponent implements OnInit {
     comments: '',
     technician: '',
     client: '',
-    clientName: '',
-    clientTechnician: '',
+    nameClient: '',
+    nameTechnician: '',
   }
 
   clients: Client[] = []
@@ -55,6 +55,7 @@ export class CalledUpdateComponent implements OnInit {
 
   findById(): void {
     this.calledService.findById(this.called.id).subscribe(resposta => {
+      console.log(resposta);
       this.called = resposta;
     }, ex => {
       this.toastService.error(ex.error.error);

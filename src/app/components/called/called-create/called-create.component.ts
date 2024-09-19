@@ -23,8 +23,8 @@ export class CalledCreateComponent implements OnInit {
     comments: '',
     technician: '',
     client: '',
-    clientName: '',
-    clientTechnician: '',
+    nameClient: '',
+    nameTechnician: '',
   }
 
   clients: Client[] = []

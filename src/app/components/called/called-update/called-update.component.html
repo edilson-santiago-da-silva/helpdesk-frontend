@@ -6,7 +6,7 @@
        <mat-form-field class="full-width" appearance="outline">
          <mat-label>Título do chamado</mat-label>
          <input  [(ngModel)]="called.title"
-         name="titulo" [formControl]="title" required matInput placeholder="Ex. Trocar bateria de notebook">
+         name="title" [formControl]="title" required matInput placeholder="Ex. Trocar bateria de notebook">
        </mat-form-field>
      </form>
  
@@ -31,24 +31,22 @@
         </mat-form-field>
      </div>
  
-     <div class="tecnico">
+     <div class="technician">
        <mat-form-field class="full-width" appearance="outline">
-          <mat-label>TÉCNICO {{ called.clientTechnician }}</mat-label>
+          <mat-label>TÉCNICO ({{ called.nameTechnician }})</mat-label>
           <mat-select  [(ngModel)]="called.technician"
           name="technician" [formControl]="technician" required>
           <mat-option *ngFor="let tec of technicians" value="{{ tec.id }}">{{ tec.name }}</mat-option>
-            <mat-option value="0">Valdir</mat-option>
-          </mat-select>
+        </mat-select>
         </mat-form-field>
      </div>
  
-     <div class="cliente">
+     <div class="client">
        <mat-form-field class="full-width" appearance="outline">
-          <mat-label>CLIENTE {{ called.clientName }}</mat-label>
+          <mat-label>CLIENTE ({{ called.nameClient }})</mat-label>
           <mat-select [(ngModel)]="called.client"
           name="client" [formControl]="client" required>
           <mat-option *ngFor="let cli of clients" value="{{ cli.id }}">{{ cli.name }}</mat-option>
-            <mat-option value="0">Albert Einstein</mat-option>
           </mat-select>
         </mat-form-field>
      </div>
