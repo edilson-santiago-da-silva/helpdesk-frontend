@@ -15,6 +15,7 @@ import { ClientCreateComponent } from './components/client/client-create/client-
 import { CalledListComponent } from './components/called/called-list/called-list.component';
 import { CalledCreateComponent } from './components/called/called-create/called-create.component';
 import { CalledUpdateComponent } from './components/called/called-update/called-update.component';
+import { CalledReadComponent } from './components/called/called-read/called-read.component';
 
 const routes: Routes = [
   { path: 'login', component: LoginComponent },
@@ -33,6 +34,7 @@ const routes: Routes = [
 
       {path: 'calleds', component: CalledListComponent},
       {path: 'calleds/create', component: CalledCreateComponent},
+      {path: 'calleds/read/:id', component: CalledReadComponent},
       {path: 'calleds/update/:id', component: CalledUpdateComponent} 
     ]
   }
